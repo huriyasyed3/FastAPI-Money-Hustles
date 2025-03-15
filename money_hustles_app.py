@@ -1,4 +1,4 @@
-from fastapi import FastAPI  # FastAPI class import ki
+from fastapi import FastAPI  #  import FastAPI class
 import random
 
 app = FastAPI()
