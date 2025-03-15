@@ -1,5 +1,6 @@
 from fastapi import FastAPI  #  import FastAPI class
 import random
+from fastapi.responses import RedirectResponse 
 
 app = FastAPI()
 
@@ -7,6 +8,10 @@ app = FastAPI()
 # 1- side_hustles
 # 2- money_quotes
 
+@app.get('/', include_in_schema=False)
+async def redirect_to_docs():
+    return RedirectResponse(url="/docs")
+    
 side_hustles = [
     "Freelancing - Start offering your skill online",
     "Graphic Design - Create logos, posters, and visuals for clients",
